@@ -1,0 +1,50 @@
+side-drawer {
+    /* Component styles go here */
+}
+
+.footer {
+    flex: 0;
+    display: block;
+}
+
+
+.sidenav {
+    /* padding-top: 55px; */
+    position: fixed;
+    box-shadow: 0 0 32px -16px black;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 200px;
+    background-color: white;
+    z-index: 5;
+    transform: translateX(-200px);
+    transition: 0.2s transform;
+}
+
+@media screen and (min-width: 992px) {
+    /* Sidenav should always be open on desktop */
+    div.sidenav {
+        transform: none;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .backdrop {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 3;
+        background-color: black;
+        opacity: 0.5;
+    }
+    /* div.open {
+        transform: translateX(-200px);
+    } */
+}
+
+.open {
+    transform: none;
+}
