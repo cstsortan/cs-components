@@ -1,19 +1,19 @@
 import { TestWindow } from '@stencil/core/testing';
-import { BottomSheet } from './bottom-sheet';
+import { CsModal } from './cs-modal';
 
-describe('bottom-sheet', () => {
+describe('cs-modal', () => {
   it('should build', () => {
-    expect(new BottomSheet()).toBeTruthy();
+    expect(new CsModal()).toBeTruthy();
   });
 
   describe('rendering', () => {
-    let element: HTMLBottomSheetElement;
+    let element: HTMLCsModalElement;
     let testWindow: TestWindow;
     beforeEach(async () => {
       testWindow = new TestWindow();
       element = await testWindow.load({
-        components: [BottomSheet],
-        html: '<bottom-sheet></bottom-sheet>'
+        components: [CsModal],
+        html: '<cs-modal></cs-modal>'
       });
     });
 

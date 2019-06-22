@@ -9,7 +9,14 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 
 export namespace Components {
-  interface BottomSheet {}
+  interface BottomSheet {
+    'closeBottomSheet': () => Promise<void>;
+    'openBottomSheet': () => Promise<void>;
+  }
+  interface CsModal {
+    'closeModal': () => Promise<void>;
+    'openModal': () => Promise<void>;
+  }
   interface MyComponent {
     /**
     * The first name
@@ -38,6 +45,12 @@ declare global {
     new (): HTMLBottomSheetElement;
   };
 
+  interface HTMLCsModalElement extends Components.CsModal, HTMLStencilElement {}
+  var HTMLCsModalElement: {
+    prototype: HTMLCsModalElement;
+    new (): HTMLCsModalElement;
+  };
+
   interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
   var HTMLMyComponentElement: {
     prototype: HTMLMyComponentElement;
@@ -51,6 +64,7 @@ declare global {
   };
   interface HTMLElementTagNameMap {
     'bottom-sheet': HTMLBottomSheetElement;
+    'cs-modal': HTMLCsModalElement;
     'my-component': HTMLMyComponentElement;
     'side-drawer': HTMLSideDrawerElement;
   }
@@ -58,6 +72,7 @@ declare global {
 
 declare namespace LocalJSX {
   interface BottomSheet extends JSXBase.HTMLAttributes<HTMLBottomSheetElement> {}
+  interface CsModal extends JSXBase.HTMLAttributes<HTMLCsModalElement> {}
   interface MyComponent extends JSXBase.HTMLAttributes<HTMLMyComponentElement> {
     /**
     * The first name
@@ -79,6 +94,7 @@ declare namespace LocalJSX {
 
   interface IntrinsicElements {
     'bottom-sheet': BottomSheet;
+    'cs-modal': CsModal;
     'my-component': MyComponent;
     'side-drawer': SideDrawer;
   }
