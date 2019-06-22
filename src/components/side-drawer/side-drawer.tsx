@@ -1,4 +1,4 @@
-import { Component, h, Prop, EventEmitter, Event } from '@stencil/core';
+import { Component, h, EventEmitter, Event, State, Method, Prop } from '@stencil/core';
 
 
 @Component({
@@ -16,7 +16,18 @@ export class SideDrawer {
     }
 
     @Prop()
-    open: boolean = true;
+    @State()
+    open: boolean = false;
+
+    @Method()
+    async openDrawer() {
+        this.open = true;
+    }
+
+    @Method()
+    async closeDrawer() {
+        this.open = false;
+    }
     
     render() {
         return ([

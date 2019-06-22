@@ -1,4 +1,4 @@
-import { Component, h, State, Method } from '@stencil/core';
+import { Component, h, State, Method, Prop } from '@stencil/core';
 
 
 @Component({
@@ -7,6 +7,7 @@ import { Component, h, State, Method } from '@stencil/core';
 })
 export class CsModal {
     @State()
+    @Prop()
     open: boolean = false;
 
     @Method()

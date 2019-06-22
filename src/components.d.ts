@@ -9,40 +9,26 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 
 export namespace Components {
-  interface BottomSheet {
-    'closeBottomSheet': () => Promise<void>;
-    'openBottomSheet': () => Promise<void>;
-  }
+  interface CsAppbar {}
   interface CsModal {
     'closeModal': () => Promise<void>;
+    'open': boolean;
     'openModal': () => Promise<void>;
   }
-  interface MyComponent {
-    /**
-    * The first name
-    */
-    'first': string;
-    /**
-    * The last name
-    */
-    'last': string;
-    /**
-    * The middle name
-    */
-    'middle': string;
-  }
   interface SideDrawer {
+    'closeDrawer': () => Promise<void>;
     'open': boolean;
+    'openDrawer': () => Promise<void>;
   }
 }
 
 declare global {
 
 
-  interface HTMLBottomSheetElement extends Components.BottomSheet, HTMLStencilElement {}
-  var HTMLBottomSheetElement: {
-    prototype: HTMLBottomSheetElement;
-    new (): HTMLBottomSheetElement;
+  interface HTMLCsAppbarElement extends Components.CsAppbar, HTMLStencilElement {}
+  var HTMLCsAppbarElement: {
+    prototype: HTMLCsAppbarElement;
+    new (): HTMLCsAppbarElement;
   };
 
   interface HTMLCsModalElement extends Components.CsModal, HTMLStencilElement {}
@@ -51,41 +37,22 @@ declare global {
     new (): HTMLCsModalElement;
   };
 
-  interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
-  var HTMLMyComponentElement: {
-    prototype: HTMLMyComponentElement;
-    new (): HTMLMyComponentElement;
-  };
-
   interface HTMLSideDrawerElement extends Components.SideDrawer, HTMLStencilElement {}
   var HTMLSideDrawerElement: {
     prototype: HTMLSideDrawerElement;
     new (): HTMLSideDrawerElement;
   };
   interface HTMLElementTagNameMap {
-    'bottom-sheet': HTMLBottomSheetElement;
+    'cs-appbar': HTMLCsAppbarElement;
     'cs-modal': HTMLCsModalElement;
-    'my-component': HTMLMyComponentElement;
     'side-drawer': HTMLSideDrawerElement;
   }
 }
 
 declare namespace LocalJSX {
-  interface BottomSheet extends JSXBase.HTMLAttributes<HTMLBottomSheetElement> {}
-  interface CsModal extends JSXBase.HTMLAttributes<HTMLCsModalElement> {}
-  interface MyComponent extends JSXBase.HTMLAttributes<HTMLMyComponentElement> {
-    /**
-    * The first name
-    */
-    'first'?: string;
-    /**
-    * The last name
-    */
-    'last'?: string;
-    /**
-    * The middle name
-    */
-    'middle'?: string;
+  interface CsAppbar extends JSXBase.HTMLAttributes<HTMLCsAppbarElement> {}
+  interface CsModal extends JSXBase.HTMLAttributes<HTMLCsModalElement> {
+    'open'?: boolean;
   }
   interface SideDrawer extends JSXBase.HTMLAttributes<HTMLSideDrawerElement> {
     'onDrawerClosed'?: (event: CustomEvent<any>) => void;
@@ -93,9 +60,8 @@ declare namespace LocalJSX {
   }
 
   interface IntrinsicElements {
-    'bottom-sheet': BottomSheet;
+    'cs-appbar': CsAppbar;
     'cs-modal': CsModal;
-    'my-component': MyComponent;
     'side-drawer': SideDrawer;
   }
 }

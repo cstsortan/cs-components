@@ -11,6 +11,27 @@
 </head>
 <body>
 
+  <style>
+    cs-appbar {
+      user-select: none;
+    }
+  </style>
+  <cs-appbar>
+    <div id="btn-menu" slot="start">
+      m
+    </div>
+    <div id="btn-main">Lite Shop</div>
+    <div slot="end"></div>
+  </cs-appbar>
+  <side-drawer></side-drawer>
+  <cs-modal>
+    <p>Who's here?</p>
+  </cs-modal>
+  <script>
+    document.querySelector('#btn-menu').addEventListener('click', () => document.querySelector('side-drawer').openDrawer());
+    document.querySelector('#btn-main').addEventListener('click', () => document.querySelector('cs-modal').openModal());
+  </script>
+
   <!-- <my-component first="Stencil" middle="Middle?" last="'Don't call me a framework' JS"></my-component> -->
 
   <!-- <bottom-sheet></bottom-sheet> -->
