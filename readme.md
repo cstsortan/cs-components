@@ -31,7 +31,7 @@ To start using this library, you can simply add a script tag in the head of your
 
 ## Using the elements:
 Here's an example that uses all three elements:
-html```
+```html
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
 
