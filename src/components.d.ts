@@ -17,7 +17,6 @@ export namespace Components {
   }
   interface SideDrawer {
     'closeDrawer': () => Promise<void>;
-    'open': boolean;
     'openDrawer': () => Promise<void>;
   }
 }
@@ -56,7 +55,6 @@ declare namespace LocalJSX {
   }
   interface SideDrawer extends JSXBase.HTMLAttributes<HTMLSideDrawerElement> {
     'onDrawerClosed'?: (event: CustomEvent<any>) => void;
-    'open'?: boolean;
   }
 
   interface IntrinsicElements {

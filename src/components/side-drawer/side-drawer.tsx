@@ -1,4 +1,4 @@
-import { Component, h, EventEmitter, Event, State, Method, Prop } from '@stencil/core';
+import { Component, h, EventEmitter, Event, State, Method } from '@stencil/core';
 
 
 @Component({
@@ -13,9 +13,9 @@ export class SideDrawer {
 
     onBackdropClicked = () => {
         this.open = false;
+        this.drawerClosed.emit();
     }
 
-    @Prop()
     @State()
     open: boolean = false;
 

@@ -3,7 +3,8 @@ import { Component, h, State, Method, Prop } from '@stencil/core';
 
 @Component({
     tag: 'cs-modal',
-    styleUrl: 'cs-modal.scss'
+    styleUrl: 'cs-modal.scss',
+    shadow: true,
 })
 export class CsModal {
     @State()

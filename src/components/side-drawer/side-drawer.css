@@ -18,7 +18,7 @@ side-drawer {
     width: 200px;
     background-color: white;
     z-index: 5;
-    transform: translateX(-200px);
+    transform: translateX(-220px);
     transition: 0.2s transform;
 }
 

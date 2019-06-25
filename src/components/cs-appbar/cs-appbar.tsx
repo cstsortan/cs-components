@@ -3,7 +3,8 @@ import { Component, h } from '@stencil/core';
 
 @Component({
     tag: 'cs-appbar',
-    styleUrl: 'cs-appbar.scss'
+    styleUrl: 'cs-appbar.scss',
+    shadow: true,
 })
 export class CsAppbar {
     
