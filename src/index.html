@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
-  <title>Stencil Component Starter</title>
+  <title>cstsortan-components</title>
+  <script src="https://unpkg.com/cstsortan-components@0.0.1/dist/cstsortan-components.js"></script>`
 
-  <script type="module" src="/build/cstsortan-components.esm.js"></script>
-  <script nomodule src="/build/cstsortan-components.js"></script>
-  
 </head>
+
 <body>
 
   <style>
@@ -31,42 +31,6 @@
     document.querySelector('#btn-menu').addEventListener('click', () => document.querySelector('side-drawer').openDrawer());
     document.querySelector('#btn-main').addEventListener('click', () => document.querySelector('cs-modal').openModal());
   </script>
-
-  <!-- <my-component first="Stencil" middle="Middle?" last="'Don't call me a framework' JS"></my-component> -->
-
-  <!-- <bottom-sheet></bottom-sheet> -->
-
-  <!-- <button>Toggle Side-drawer</button>
-  <style>
-  div {
-    height: 100%;
-    background-color: blueviolet;
-    color: white;
-    padding: 16px;
-  }
-  </style>
-  <side-drawer>
-    <div>Somethhing</div>
-  </side-drawer>
-  <script>
-  const btn = document.querySelector('button');
-  const sideDrawer = document.querySelector('side-drawer');
-  btn.addEventListener('click', () => {
-    sideDrawer.open = !sideDrawer.open;
-  })
-  </script> -->
-
-  <!-- <bottom-sheet></bottom-sheet> -->
-
-
-
-  <!-- <button>Open</button>
-  <cs-modal>
-    <h1>This is some modal content</h1>
-    <p slot="header">What?</p>
-  </cs-modal>
-  <script>
-  document.querySelector('button').addEventListener('click', () => document.querySelector('cs-modal').openModal());</script> -->
-
 </body>
+
 </html>
